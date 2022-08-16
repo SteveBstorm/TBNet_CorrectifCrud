@@ -1,0 +1,6 @@
+<ul>
+  <li *ngFor="let f of liste; let i = index;">
+    <a [routerLink]="['../detail', i]" >{{f.nom}}</a>
+    <button (click)="openMaj(i)">Maj</button> <button (click)="suppression(i)">-X-</button>
+  </li>
+</ul>

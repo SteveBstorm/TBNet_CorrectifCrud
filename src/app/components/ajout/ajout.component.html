@@ -1,0 +1,12 @@
+<h3>Formulaire d'ajout</h3>
+<form [formGroup]="fg" (ngSubmit)="validForm()">
+  <p>Nom : <input type="text" formControlName="nom"></p>
+  <p>Date de naissance : <input type="date" formControlName="dateNaissance"></p>
+
+  <ul formArrayName="listeSerie">Série favorites <button type="button" (click)="ajoutSerie()">+</button>
+    <li *ngFor="let s of getListeSeriesControl().controls; let i = index;">
+      Série {{i+1}} : <input type="text" [formControlName]="i">
+    </li>
+  </ul>
+  <button type="submit" [disabled]="fg.invalid">Valider</button>
+</form>

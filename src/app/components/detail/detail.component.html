@@ -1,0 +1,8 @@
+<div *ngIf="currentFan"><h3>Détail de {{currentFan.nom}}</h3>
+<p>Date de naissance : {{currentFan.dateNaissance | date : 'dd-MM-yyyy'}}</p>
+<ul *ngIf="currentFan.listeSerie.length > 0"> Séries favorites
+  <li *ngFor="let s of currentFan.listeSerie">
+    {{s}}
+  </li>
+</ul>
+</div>
